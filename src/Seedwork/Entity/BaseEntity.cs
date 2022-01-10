@@ -1,7 +1,7 @@
 ﻿namespace Seedwork.Entity;
 public abstract class BaseEntity<ID, Prop> : IEntity<ID>, IEquatable<BaseEntity<ID, Prop>>
     where ID : struct
-    where Prop : BaseEntity<ID, Pop>
+    where Prop : BaseEntity<ID, Prop>
 {
     public ID EntityId { get; }
 
