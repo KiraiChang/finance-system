@@ -19,12 +19,7 @@ public abstract class BaseEntity<TIdType, TPropType> : IEntity<TIdType>, IEquata
             return false;
         }
 
-        if (ReferenceEquals(this, other))
-        {
-            return true;
-        }
-
-        return this.EntityId.Equals(other.EntityId);
+        return ReferenceEquals(this, other) || this.EntityId.Equals(other.EntityId);
     }
 
     public override bool Equals(object? obj)
