@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Seedwork.Entity;
+namespace SeedWork.Entity;
 
 public abstract class BaseValueObject<T> : IValueObject, IEquatable<BaseValueObject<T>>
     where T : BaseValueObject<T>
@@ -13,9 +13,8 @@ public abstract class BaseValueObject<T> : IValueObject, IEquatable<BaseValueObj
             return false;
         }
 
-        var thisValues = this.GetAtomicValues().GetEnumerator();
-        var otherValues = other.GetAtomicValues().GetEnumerator();
-
+        using var thisValues = this.GetAtomicValues().GetEnumerator();
+        using var otherValues = other.GetAtomicValues().GetEnumerator();
         while (thisValues.MoveNext() && otherValues.MoveNext())
         {
             if (ReferenceEquals(thisValues.Current, null) ^
@@ -30,7 +29,7 @@ public abstract class BaseValueObject<T> : IValueObject, IEquatable<BaseValueObj
                 return false;
             }
         }
-
+                
         return !thisValues.MoveNext() && !otherValues.MoveNext();
     }
 

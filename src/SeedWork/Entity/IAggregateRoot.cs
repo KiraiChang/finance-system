@@ -1,8 +1,8 @@
-using Seedwork.Event;
+using SeedWork.Event;
 
-namespace Seedwork.Entity;
+namespace SeedWork.Entity;
 
-public interface IAggregateRoot<ID> : IEntity<ID>
+public interface IAggregateRoot<out TIdType> : IEntity<TIdType>
 {
     string RootType { get; }
     IEnumerable<IDomainEvent> Events { get; }

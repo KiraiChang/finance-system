@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Xunit;
-using Seedwork.Entity;
-namespace Seedwork.Tests.Entity;
+using SeedWork.Entity;
+namespace SeedWork.Tests.Entity;
 
 public class BaseValueObjectMock : BaseValueObject<BaseValueObjectMock>
 {

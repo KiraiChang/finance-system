@@ -5,6 +5,10 @@
     <Nullable>enable</Nullable>
 
     <IsPackable>false</IsPackable>
+
+    <AssemblyName>SeedWork.Tests</AssemblyName>
+
+    <RootNamespace>SeedWork.Tests</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -21,7 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Seedwork\Seedwork.csproj" />
+    <ProjectReference Include="..\..\src\SeedWork\SeedWork.csproj" />
   </ItemGroup>
 
 </Project>

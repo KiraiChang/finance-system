@@ -1,13 +1,12 @@
 using System.Collections.Concurrent;
-using Seedwork.Event;
+using SeedWork.Event;
 
-namespace Seedwork.Entity;
-public class BaseAggregateRoot<ID, Type> : BaseEntity<ID, BaseAggregateRoot<ID, Type>>, IAggregateRoot<ID>
-    where ID : struct
-    where Type : BaseAggregateRoot<ID, Type>
+namespace SeedWork.Entity;
+public abstract class BaseAggregateRoot<TIdType, TPropType> : BaseEntity<TIdType, BaseAggregateRoot<TIdType, TPropType>>, IAggregateRoot<TIdType>
+    where TIdType : struct
+    where TPropType : BaseAggregateRoot<TIdType, TPropType>
 {
-
-    public BaseAggregateRoot(ID id) : base(id)
+    protected BaseAggregateRoot(TIdType id) : base(id)
     {
 
     }

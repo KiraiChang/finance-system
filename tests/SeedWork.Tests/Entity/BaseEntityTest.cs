@@ -1,6 +1,6 @@
 using Xunit;
-using Seedwork.Entity;
-namespace Seedwork.Tests.Entity;
+using SeedWork.Entity;
+namespace SeedWork.Tests.Entity;
 
 public class BaseEntityMock : BaseEntity<int, BaseEntityMock>
 {
