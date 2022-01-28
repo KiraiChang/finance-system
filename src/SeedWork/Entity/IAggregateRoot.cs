@@ -2,11 +2,20 @@ using SeedWork.Event;
 
 namespace SeedWork.Entity;
 
-public interface IAggregateRoot<out TIdType> : IEntity<TIdType>
+/// <summary>
+/// DDD aggregate root interface
+/// </summary>
+/// <typeparam name="TIdType">entity id type</typeparam>
+public interface IAggregateRoot<out TIdType> : IEntity<TIdType> where TIdType : struct
 {
+    /// <summary>
+    /// aggregate root type
+    /// </summary>
     string RootType { get; }
-    IEnumerable<IDomainEvent> Events { get; }
 
+    /// <summary>
+    /// add domain event
+    /// </summary>
+    /// <param name="event">domain event</param>
     void AddEvent(IDomainEvent @event);
-    void ClearEvents();
 }
