@@ -17,10 +17,8 @@ public class BaseValueObjectMock : BaseValueObject<BaseValueObjectMock>
 
     public override IEnumerable<object> GetAtomicValues()
     {
-        var result = new List<object>();
-        result.Add(Name);
-        result.Add(Value);
-        return result;
+        yield return Name;
+        yield return Value;
     }
 }
 
