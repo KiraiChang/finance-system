@@ -5,7 +5,7 @@ namespace SeedWork.Entity;
 /// <summary>
 /// DDD aggregate root interface
 /// </summary>
-/// <typeparam name="TIdType">entity id type</typeparam>
+/// <typeparam name="TIdType">type of entity id</typeparam>
 public interface IAggregateRoot<out TIdType> : IEntity<TIdType> where TIdType : struct
 {
     /// <summary>
